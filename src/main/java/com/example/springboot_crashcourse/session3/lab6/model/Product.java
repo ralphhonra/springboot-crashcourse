@@ -1,4 +1,4 @@
-package com.example.springboot_crashcourse.session2.lab6.model;
+package com.example.springboot_crashcourse.session3.lab6.model;
 
 import java.util.Objects;
 
@@ -8,7 +8,8 @@ public class Product {
     private double price;
 
 
-    public Product(String name, double price) {
+    public Product(Long id, String name, double price) {
+        this.id = id;
         this.name = name;
         this.price = price;
     }

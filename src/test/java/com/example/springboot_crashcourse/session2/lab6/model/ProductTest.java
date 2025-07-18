@@ -1,5 +1,6 @@
 package com.example.springboot_crashcourse.session2.lab6.model;
 
+import com.example.springboot_crashcourse.session3.lab6.model.Product;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -11,7 +12,7 @@ class ProductTest {
 
     @BeforeEach
     void setUp() {
-        product = new Product("Ralph", 1000);
+        product = new Product(12345L, "Ralph", 1000);
     }
 
     @AfterEach
@@ -39,7 +40,6 @@ class ProductTest {
     void testIDWithPositiveInteger() {
         Long expectedID = 12345L;
 
-        assertNull(product.getId());
         product.setId(expectedID);
         assertEquals(expectedID, product.getId());
     }
@@ -55,8 +55,8 @@ class ProductTest {
 
     @Test
     void testHashCode() {
-        Product firstProduct = new Product("test", 2000);
-        Product secondProduct = new Product("test", 2000);
+        Product firstProduct = new Product(12345L, "test", 2000);
+        Product secondProduct = new Product(12345L, "test", 2000);
 
         assertEquals(firstProduct.hashCode(), secondProduct.hashCode());
     }
@@ -78,8 +78,8 @@ class ProductTest {
 
     @Test
     void testEquals() {
-        Product firstProduct = new Product("test", 2000);
-        Product secondProduct = new Product("test", 2000);
+        Product firstProduct = new Product(12345L, "test", 2000);
+        Product secondProduct = new Product(12345L, "test", 2000);
 
         assertEquals(firstProduct.hashCode(), secondProduct.hashCode());
     }
